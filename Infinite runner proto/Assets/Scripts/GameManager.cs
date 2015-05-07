@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     private Platformer2DUserControl userControl;
     private bool isGamePaused;
 
+    public HUDConroller hudScript;
+
     // Use this for initialization
     void Start()
     {
@@ -31,6 +33,8 @@ public class GameManager : MonoBehaviour
 
                 Debug.Log("Character speed: " + userControl.CharacterSpeed);
             }
+
+            hudScript.SetScore(Score);
         }
     }
 
@@ -60,7 +64,9 @@ public class GameManager : MonoBehaviour
         // TODO: Menu popup
         Debug.Log("Died with score " + Score);
 
-        Retry();
+        hudScript.ShowMenu();
+
+        //Retry();
     }
 
     public void Jump()
