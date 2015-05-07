@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class MenuScript : MonoBehaviour
     Animator animator;
 
     int showHash, hideHash;
+
+    public GameObject jumpArea;
     // Use this for initialization
     void Start()
     {
@@ -21,15 +24,14 @@ public class MenuScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             animator.SetTrigger(showHash);
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            animator.SetTrigger(hideHash);
+            jumpArea.SetActive(false);
+
         }
     }
 
     public void HideMenu()
     {
         animator.SetTrigger(hideHash);
+        jumpArea.SetActive(true);
     }
 }

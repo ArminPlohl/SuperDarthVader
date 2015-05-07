@@ -20,4 +20,9 @@ public class HUDConroller : MonoBehaviour
     {
         script.HideMenu();
     }
+
+    public void onJumpButtonClick()
+    {
+        Debug.Log("JUMP");
+    }
 }
