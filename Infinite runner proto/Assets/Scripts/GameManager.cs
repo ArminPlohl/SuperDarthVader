@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
         {
             Score += (Time.deltaTime * 100f);
 
-            if (Score / 1000 > Diffuculties)
+            // Za vsake 30 ali manj sekund
+            if (Score / 3000 > Diffuculties)
             {
                 ++Diffuculties;
                 userControl.CharacterSpeed *= 1.1f;
@@ -41,6 +42,12 @@ public class GameManager : MonoBehaviour
     public void Retry()
     {
         Application.LoadLevel(0);
+    }
+
+    public void PickUpBonus()
+    {
+        // Bonus doda 5 sekund časa
+        Score += 500;
     }
 
     public void ChangeGamePause(bool isPaused)
