@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 public class HUDConroller : MonoBehaviour
@@ -9,7 +8,6 @@ public class HUDConroller : MonoBehaviour
     public Text gameOverScore;
     public Text score;
 
-    public GameManager gmScript;
     // Use this for initialization
     void Start()
     {
